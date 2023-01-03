@@ -58,6 +58,7 @@ const Home = () => {
     
     // query hook
     const { data, loading, error, fetchMore } = useQuery(GET_NOTES);
+
     // if the data is loading, display a loading message
     if(loading)
         return <p>loading...</p>;
