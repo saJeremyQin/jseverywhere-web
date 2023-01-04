@@ -45,8 +45,11 @@ const UserForm = props => {
                 event => {
                     event.preventDefault();
                     props.action({
-                        ...values,
-                        [event.target.name]: event.target.value
+                        variables:
+                        {
+                            ...values
+                        }
+                        // [event.target.name]: event.target.value
                     });
                 }
             }>

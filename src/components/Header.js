@@ -3,6 +3,7 @@ import React from "react";
 import logo from "../img/logo.svg";
 import styled from "styled-components";
 import { useQuery, gql } from "@apollo/client";
+import { IS_LOGGED_IN } from "../gql/query";
 
 // import both Link and withRouter from React Router
 import { Link, withRouter } from "react-router-dom";
@@ -32,12 +33,6 @@ const UserState = styled.div`
   margin-left: auto;
 `;
 
-// local query
-const IS_LOGGED_IN = gql`
-{
-  isLoggedIn @client
-}
-`;
 
 const Header = props => {
   // query hook for user logged in state

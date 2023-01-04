@@ -11,11 +11,9 @@ import Favorites from "./favorite";
 import NotePage from "./note";
 import SignUp from "./signup";
 import SignIn from "./signin";
-
-const IS_LOGGED_IN = gql`
-{
-    isLoggedIn @client
-}`;
+// import the NewNote route component
+import NewNote from "./new";
+import { IS_LOGGED_IN } from "../gql/query";
 
 // define routes
 const Pages = () => {
@@ -25,6 +23,7 @@ const Pages = () => {
                 <Route exact path="/" component={Home} />
                 <PrivateRoute path="/mynotes" component={MyNotes} />
                 <PrivateRoute path="/favorites" component={Favorites} />
+                <PrivateRoute path='/new' component={NewNote} />
                 <Route path="/note/:id" component={NotePage} />
                 <Route path="/signup" component={SignUp} />
                 <Route path="/signin" component={SignIn}/>
@@ -50,7 +49,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
                 ) : (
                     <Redirect
                         to={{
-                            pathname: 'signin',
+                            pathname: '/signin',
                             state: { from: props.location}
                         }} 
                     />)

@@ -5,11 +5,11 @@ import { useMutation, ApolloClient, gql, useApolloClient} from "@apollo/client";
 // define a mutation
 const SIGNIN_USER = gql`
     mutation signIn($email: String!, $password: String!) {
-        signUp(email: $email, password: $password)
+        signIn(email: $email, password: $password)
     }
 `;
 
-const SignIn = () => {
+const SignIn = props => {
     useEffect(() => {
         // update the document title
         document.title = 'Sign In - Notedly'
@@ -36,7 +36,7 @@ const SignIn = () => {
             <UserForm action={signIn} formType="signIn" />
             {/* if the data is loading, display a loading message*/}
             {loading && <p>Loading...</p>}
-            {error && <p>Error signing in!</p>}
+            {error && <p>Error signing in!--{error.message}</p>}
         </React.Fragment>
     );
 };
