@@ -11,6 +11,7 @@ import Favorites from "./favorite";
 import NotePage from "./note";
 import SignUp from "./signup";
 import SignIn from "./signin";
+import EditNote from "./edit";
 // import the NewNote route component
 import NewNote from "./new";
 import { IS_LOGGED_IN } from "../gql/query";
@@ -24,6 +25,7 @@ const Pages = () => {
                 <PrivateRoute path="/mynotes" component={MyNotes} />
                 <PrivateRoute path="/favorites" component={Favorites} />
                 <PrivateRoute path='/new' component={NewNote} />
+                <PrivateRoute path="/edit/:id" component={EditNote} />
                 <Route path="/note/:id" component={NotePage} />
                 <Route path="/signup" component={SignUp} />
                 <Route path="/signin" component={SignIn}/>
