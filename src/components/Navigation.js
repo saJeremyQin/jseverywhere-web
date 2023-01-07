@@ -67,7 +67,7 @@ const Navigation = () => {
                 </li>
                 <li>
                     <Link to="/new">
-                        <span aria-hidden="true" role="img">🌟</span>
+                        <span aria-hidden="true" role="img">➕</span>
                         New
                     </Link>
                 </li>
