@@ -46,7 +46,7 @@ const Home = () => {
         return <p>loading...</p>;
     // if there is an error fetching the data, display an error message
     if(error)
-        return <p>Error!</p>;
+        return <p>Error!--{error.message}</p>;
     // if the data is successful, display the data in our UI
     if(data) 
         return (
