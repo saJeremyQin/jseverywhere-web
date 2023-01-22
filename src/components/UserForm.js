@@ -40,7 +40,7 @@ const UserForm = props => {
                 props.formType==="signUp" ? (<h2>Sign Up</h2>) : (<h2>Sign In</h2>)
             }
             {/* perform the mutation when a user submits the form */}
-
+            {/* { console.log(...values);} */}
             <Form onSubmit={
                 event => {
                     event.preventDefault();

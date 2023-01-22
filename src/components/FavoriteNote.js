@@ -11,7 +11,7 @@ const FavoriteNote = props => {
     // store if the user has favorited the note as state
     const [favorited,setFavorited] = useState(
         // check if the note exists in the user favorites list
-        props.me.favorites.filter( note => note.id === props.noteId).length > 0 
+        props.me.favorites.filter(note => note.id === props.noteId).length > 0 
     );
 
     // toggleFavorite mutation hook
@@ -29,6 +29,7 @@ const FavoriteNote = props => {
                 favorited ? (
                     <ButtonAsLink 
                         onClick={() => {
+                            toggleFavorite();
                             setFavorited(false);
                             setCount(count-1);
                         }}
@@ -38,6 +39,7 @@ const FavoriteNote = props => {
                 ) : (
                     <ButtonAsLink
                         onClick={() => {
+                            toggleFavorite();
                             setFavorited(true);
                             setCount(count+1);
                         }}
