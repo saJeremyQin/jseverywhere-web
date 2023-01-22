@@ -13,6 +13,7 @@ const NoteWrapper = styled.div`
 `;
 
 const NoteFeed = ({notes}) => {
+    console.log('notes is ', notes);
     return (
         <div>
         {
