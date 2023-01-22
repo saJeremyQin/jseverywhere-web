@@ -22,7 +22,7 @@ const Favorites = () => {
     // else if the query is successful and there aren't notes, display a message
     console.log('data.me is ', data.me);
     if(data.me.favorites.length !== 0)
-        return <NoteFeed data={data.me.favorites}/>;
+        return <NoteFeed notes={data.me.favorites}/>;
     else
         return <p>No favorites yet</p>;
 
